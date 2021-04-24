@@ -1,5 +1,4 @@
-﻿using IvoNazlicTestGeometry.GeometryObjects;
-using System;
+﻿using System;
 
 namespace IvoNazlicTestGeometry
 {
@@ -8,7 +7,6 @@ namespace IvoNazlicTestGeometry
         static void Main(string[] args)
         {
             Console.WriteLine("Hello World!");
-
         }
     }
 }

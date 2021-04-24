@@ -6,31 +6,32 @@ using System.Text;
 
 namespace IvoNazlicTestGeometry.GeometryObjects
 {
-    public class Square : IGeometricThing
+    public class Circle : IGeometricThing
     {
-        public float Side { get; set; }
 
-        public Square(float side)
+        public float Diameter { get; set; }
+
+        public Circle(float diameter)
         {
-            Side = side;
+            Diameter = diameter;
         }
 
         /// <summary>
-        /// Calculates area of the square
+        /// Calculates area of the circle
         /// </summary>
         /// <returns>Area as float</returns>
         public float GetArea()
         {
-            return MathExtensions.NiceRound(MathF.Pow(Side, 2));
+            return MathExtensions.NiceRound(MathF.PI * (Diameter*0.5f) * (Diameter*0.5f));
         }
 
         /// <summary>
-        /// Calculates circumference of the square
+        /// Calculates circumference of the circle
         /// </summary>
         /// <returns>Circumference as float</returns>
         public float GetCircumference()
         {
-            return MathExtensions.NiceRound(4 * Side);  
+            return MathExtensions.NiceRound(MathF.PI * Diameter);
         }
     }
 }

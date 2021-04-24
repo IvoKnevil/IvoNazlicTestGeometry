@@ -1,17 +1,28 @@
 ﻿using IvoNazlicTestGeometry.Interfaces;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace IvoNazlicTestGeometry.Tools
 {
     public class GeometricCalculator
     {
-
+        /// <summary>
+        /// Calculates circumference of all the objects in array
+        /// </summary>
+        /// <param name="things">objects in array</param>
+        /// <returns>Circumference as float</returns>
         public float GetCircumference(IGeometricThing[] things)
         {
-            return 0;
-        }
+            float circumference = 0;
+            {
+                foreach (var item in things)
+                {
+                    if (item != null)
+                    {
+                        circumference = circumference + item.GetCircumference();
+                    }
+                }
+            }
 
+            return circumference;
+        }
     }
 }
